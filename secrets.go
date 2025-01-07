@@ -3,6 +3,7 @@ package secrets
 import (
 	"errors"
 	"os"
+	"strings"
 )
 
 type SecretManager struct {
@@ -46,7 +47,7 @@ func (sm *SecretManager) Load() error {
 		if err != nil {
 			return err
 		}
-		sm.Secrets[secretName] = string(secretValue)
+		sm.Secrets[secretName] = strings.Trim(string(secretValue), "\t\n\v\f\r")
 	}
 
 	return nil
