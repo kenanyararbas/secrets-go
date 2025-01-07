@@ -31,7 +31,7 @@ func NewSecretManager(secretDirectory string, typeConversion bool) (*SecretManag
 }
 
 func (sm *SecretManager) Load() error {
-	if isDirectory(sm.SecretDirectory) {
+	if !isDirectory(sm.SecretDirectory) {
 		return errors.New("secret directory not exist or not reachable")
 	}
 
