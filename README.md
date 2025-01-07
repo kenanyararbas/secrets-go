@@ -11,4 +11,4 @@ A simple and flexible Go package for loading secrets from Docker Secrets. Easily
 Install via `go get`:
 
 ```bash
-go get github.com/kenanyararbas/secrets-go
+go install github.com/kenanyararbas/secrets-go@latest
